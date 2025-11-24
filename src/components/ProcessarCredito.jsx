@@ -17,7 +17,7 @@ export default function ProcessarCredito() {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [setCreditoAprovado, setEtapa]); // ← dependências corretas
+  }, [setCreditoAprovado, setEtapa]);
 
   return (
     <div>
