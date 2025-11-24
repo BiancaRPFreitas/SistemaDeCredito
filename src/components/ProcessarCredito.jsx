@@ -9,12 +9,15 @@ export default function ProcessarCredito() {
       const aprovado = Math.random() > 0.5;
       setCreditoAprovado(aprovado);
 
-      if (aprovado) setEtapa("aprovado");
-      else setEtapa("historico");
-    }, 2000); // 2 segundos simulando processamento
+      if (aprovado) {
+        setEtapa("aprovado");
+      } else {
+        setEtapa("historico");
+      }
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setCreditoAprovado, setEtapa]); // ← dependências corretas
 
   return (
     <div>
@@ -23,4 +26,5 @@ export default function ProcessarCredito() {
     </div>
   );
 }
+
 
